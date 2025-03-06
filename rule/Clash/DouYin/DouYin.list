@@ -5,74 +5,58 @@
 # DOMAIN: 2
 # DOMAIN-SUFFIX: 17
 # TOTAL: 17
-# DOMAIN,lf3-static.bytednsdoc.com
-# DOMAIN,v5-dy-o-abtest.zjcdn.com
-DOMAIN-SUFFIX,amemv.com
-DOMAIN-SUFFIX,douyincdn.com
-DOMAIN-SUFFIX,douyinpic.com
-DOMAIN-SUFFIX,douyinstatic.com
-DOMAIN-SUFFIX,douyinvod.com
+DOMAIN,lf3-static.bytednsdoc.com
+DOMAIN,v5-dy-o-abtest.zjcdn.com
 DOMAIN-SUFFIX,idouyinvod.com
 DOMAIN-SUFFIX,ixigua.com
 DOMAIN-SUFFIX,ixiguavideo.com
-DOMAIN-SUFFIX,pstatp.com
 DOMAIN-SUFFIX,snssdk.com
 DOMAIN-SUFFIX,toutiao.com
-DOMAIN-KEYWORD,core-c-lq
-DOMAIN-KEYWORD,core-lq
-DOMAIN-KEYWORD,normal-c-lq
-DOMAIN-KEYWORD,normal-lq
-DOMAIN-KEYWORD,search-quic-lq
-DOMAIN-KEYWORD,search-lq
+
 # 抖音主域名
-DOMAIN-SUFFIX,douyin.com,PROXY
-DOMAIN-SUFFIX,iesdouyin.com,PROXY
+DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,iesdouyin.com
 
 # 抖音视频和直播相关
-DOMAIN-SUFFIX,aweme.snssdk.com,PROXY
-DOMAIN-SUFFIX,amemv.com,PROXY
-DOMAIN-SUFFIX,pstatp.com,PROXY
-DOMAIN-SUFFIX,douyinvod.com,PROXY
+DOMAIN-SUFFIX,aweme.snssdk.com
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,douyinvod.com
 
 # 抖音 CDN 和资源加载
-DOMAIN-SUFFIX,douyincdn.com,PROXY
-DOMAIN-SUFFIX,douyinpic.com,PROXY
-DOMAIN-SUFFIX,douyinstatic.com,PROXY
+DOMAIN-SUFFIX,douyincdn.com
+DOMAIN-SUFFIX,douyinpic.com
+DOMAIN-SUFFIX,douyinstatic.com
 
 # 抖音广告和数据分析
-DOMAIN-SUFFIX,douyinad.com,PROXY
-DOMAIN-SUFFIX,douyinlog.com,PROXY
+DOMAIN-SUFFIX,douyinad.com
+DOMAIN-SUFFIX,douyinlog.com
 
 # 抖音国际版（TikTok）相关
-DOMAIN-SUFFIX,tiktok.com,PROXY
-DOMAIN-SUFFIX,tiktokv.com,PROXY
-DOMAIN-SUFFIX,musical.ly,PROXY
+DOMAIN-SUFFIX,tiktok.com
+DOMAIN-SUFFIX,tiktokv.com
+DOMAIN-SUFFIX,musical.ly
 
 # 抖音 API 和服务端
-DOMAIN-SUFFIX,douyinapis.com,PROXY
-DOMAIN-SUFFIX,douyinserver.com,PROXY
+DOMAIN-SUFFIX,douyinapis.com
+DOMAIN-SUFFIX,douyinserver.com
 
 # 补充通用SDK及潜在CDN
-DOMAIN-SUFFIX,snssdk.com,PROXY
-DOMAIN-SUFFIX,bytedapm.com,PROXY  # 字节跳动APM监控
-DOMAIN-SUFFIX,byteoversea.com,PROXY  # TikTok海外相关
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,bytedapm.com  # 字节跳动APM监控
+DOMAIN-SUFFIX,byteoversea.com  # TikTok海外相关
 
 # 防止DNS污染（可选）
-IP-CIDR,13.224.0.0/14,PROXY,no-resolve  # TikTok AWS CDN
-IP-CIDR,31.13.24.0/21,PROXY,no-resolve  # Facebook相关（TikTok分享）
+IP-CIDR,13.224.0.0/14,no-resolve  # TikTok AWS CDN
+IP-CIDR,31.13.24.0/21,no-resolve  # Facebook相关（TikTok分享）
 
-# 抖音国内直连，TikTok走代理
-DOMAIN-SUFFIX,douyin.com,PROXY
-DOMAIN-SUFFIX,iesdouyin.com,PROXY
-DOMAIN-SUFFIX,amemv.com,PROXY
-DOMAIN-SUFFIX,douyincdn.com,PROXY
-
-# TikTok及国际服务代理
-DOMAIN-SUFFIX,tiktok.com,PROXY
-DOMAIN-SUFFIX,musical.ly,PROXY
-DOMAIN-SUFFIX,byteoversea.com,PROXY
+# 抖音国内
+DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,iesdouyin.com
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,douyincdn.com
 
 # 共用服务代理（可选）
-DOMAIN-SUFFIX,snssdk.com,PROXY
-DOMAIN-SUFFIX,pstatp.com,PROXY
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,pstatp.com
 
