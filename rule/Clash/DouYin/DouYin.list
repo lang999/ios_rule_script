@@ -4,26 +4,26 @@
 # no-resolve: 仅处理IP规则，不解析域名
 
 # ==== 国内服务直连 ====
-DOMAIN-SUFFIX,douyin.com,PROXY
-DOMAIN-SUFFIX,iesdouyin.com,PROXY
-DOMAIN-SUFFIX,douyincdn.com,PROXY
-DOMAIN-SUFFIX,amemv.com,PROXY
-DOMAIN-SUFFIX,douyinpic.com,PROXY
-DOMAIN-SUFFIX,douyinstatic.com,PROXY
+DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,iesdouyin.com
+DOMAIN-SUFFIX,douyincdn.com
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,douyinpic.com
+DOMAIN-SUFFIX,douyinstatic.com
 
 # ==== 国际服务代理 ====
-DOMAIN-SUFFIX,tiktok.com,PROXY
-DOMAIN-SUFFIX,tiktokv.com,PROXY
-DOMAIN-SUFFIX,musical.ly,PROXY
-DOMAIN-SUFFIX,byteoversea.com,PROXY
-DOMAIN-SUFFIX,ttlivecdn.com,PROXY  # 补充直播推流
+DOMAIN-SUFFIX,tiktok.com
+DOMAIN-SUFFIX,tiktokv.com
+DOMAIN-SUFFIX,musical.lyY
+DOMAIN-SUFFIX,byteoversea.com
+DOMAIN-SUFFIX,ttlivecdn.com  # 补充直播推流
 
 # ==== 共用服务代理 ====
-DOMAIN-SUFFIX,snssdk.com,PROXY
-DOMAIN-SUFFIX,bytedapm.com,PROXY
-DOMAIN-SUFFIX,pstatp.com,PROXY
-DOMAIN-SUFFIX,bytedance.com,PROXY  # 核心账号服务
-DOMAIN-SUFFIX,byted.org,PROXY      # 开发接口
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,bytedapm.com
+DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,bytedance.com  # 核心账号服务
+DOMAIN-SUFFIX,byted.org     # 开发接口
 
 # ==== 抗DNS污染 ====
 IP-CIDR,13.224.0.0/14,PROXY,no-resolve  # TikTok AWS北美节点
