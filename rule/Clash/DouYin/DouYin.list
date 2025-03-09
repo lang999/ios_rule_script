@@ -1,52 +1,29 @@
-[Rule]
-# ================= 国内服务直连强化 =================
-# 核心主站
-DOMAIN-SUFFIX,douyin.com
-DOMAIN-SUFFIX,iesdouyin.com
-# CDN加速
+# NAME: DouYin
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_r
+# UPDATED: 2024-07-03 16:17:40
+# DOMAIN: 2
+# DOMAIN-SUFFIX: 19
+# TOTAL: 22
+DOMAIN,lf3-static.bytednsdoc.com
+DOMAIN,v5-dy-o-abtest.zjcdn.com
+DOMAIN-SUFFIX,amemv.com
 DOMAIN-SUFFIX,douyincdn.com
 DOMAIN-SUFFIX,douyinpic.com
 DOMAIN-SUFFIX,douyinstatic.com
-# 电商支付
-DOMAIN-SUFFIX,amemv.com
-DOMAIN-SUFFIX,payment-dock.douyin.com
-# 安全验证
-DOMAIN-SUFFIX,verify.douyin.com
-DOMAIN-SUFFIX,captcha.douyin.com
-
-# ================= 海外服务强制代理 =================
-# TikTok核心域名组
-DOMAIN-SUFFIX,tiktok.com
-DOMAIN-SUFFIX,tiktokv.com
-DOMAIN-SUFFIX,ttlive.com
-# 字节全球证书校验
-DOMAIN-SUFFIX,ibytedtos.com
-DOMAIN-SUFFIX,byteoversea.com
-
-# ================= 混合服务智能分流 =================
-# 用户账户系统（动态分流）
-DOMAIN,account.bytedance.com
-DOMAIN,passport.douyin.com
-# 地理位置服务
-DOMAIN-SUFFIX,amap.com
-DOMAIN-SUFFIX,geoip-db.com
-
-# ================= 抗DNS污染升级 =================
-# AWS北美核心节点
-IP-CIDR,13.224.0.0/14,no-resolve
-# Facebook骨干网
-IP-CIDR,31.13.24.0/21,no-resolve
-# Google Cloud服务
-IP-CIDR,34.126.0.0/16,no-resolve
-
-# ================= 移动端进程级分流 =================
-# 安卓包名检测
-PROCESS-NAME,com.ss.android.ugc.aweme
-PROCESS-NAME,com.zhiliaoapp.musically
-# iOS进程特征
-USER-AGENT,Douyin*
-USER-AGENT,TikTok*
-
-# ================= 终极流量管控 =================
-GEOIP,CN,PROXY
-FINAL,PROXY
+DOMAIN-SUFFIX,douyinvod.com
+DOMAIN-SUFFIX,idouyinvod.com
+DOMAIN-SUFFIX,ixigua.com
+DOMAIN-SUFFIX,ixiguavideo.com
+DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,toutiao.com
+DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,iesdouyin.com
+DOMAIN-SUFFIX,aweme.snssdk.com
+DOMAIN-SUFFIX,douyinad.com
+DOMAIN-SUFFIX,douyinlog.com
+DOMAIN-SUFFIX,douyinapis.com
+DOMAIN-SUFFIX,douyinserver.com
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,bytedapm.com  # 字节跳动APM监控
