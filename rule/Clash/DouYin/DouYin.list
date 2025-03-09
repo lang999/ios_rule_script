@@ -11,12 +11,6 @@ DOMAIN-SUFFIX,amemv.com
 DOMAIN-SUFFIX,douyinpic.com
 DOMAIN-SUFFIX,douyinstatic.com
 
-# ==== 国际服务代理 ====
-DOMAIN-SUFFIX,tiktok.com
-DOMAIN-SUFFIX,tiktokv.com
-DOMAIN-SUFFIX,musical.lyY
-DOMAIN-SUFFIX,byteoversea.com
-
 # ==== 共用服务代理 ====
 DOMAIN-SUFFIX,snssdk.com
 DOMAIN-SUFFIX,bytedapm.com
