@@ -1,52 +1,52 @@
 [Rule]
-# ====== 国内服务强化直连 ======
-# 核心服务
-DOMAIN-SUFFIX,douyin.com,PROXY
-DOMAIN-SUFFIX,iesdouyin.com,PROXY
-DOMAIN-SUFFIX,douyincdn.com,PROXY
-DOMAIN-SUFFIX,amemv.com,PROXY
-# 静态资源
-DOMAIN-SUFFIX,douyinpic.com,PROXY
-DOMAIN-SUFFIX,douyinstatic.com,PROXY
-# 新增安全校验域名（2023年新增）
-DOMAIN-SUFFIX,security.douyin.com,PROXY
-DOMAIN-SUFFIX,verify.douyin.com,PROXY
-# 支付与日志
-DOMAIN-SUFFIX,payment.douyin.com,PROXY
-DOMAIN-SUFFIX,log.douyin.com,PROXY
+# ================= 国内服务直连强化 =================
+# 核心主站
+DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,iesdouyin.com
+# CDN加速
+DOMAIN-SUFFIX,douyincdn.com
+DOMAIN-SUFFIX,douyinpic.com
+DOMAIN-SUFFIX,douyinstatic.com
+# 电商支付
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,payment-dock.douyin.com
+# 安全验证
+DOMAIN-SUFFIX,verify.douyin.com
+DOMAIN-SUFFIX,captcha.douyin.com
 
-# ====== 海外服务强制代理 ======
-# TikTok核心域名
-DOMAIN-SUFFIX,tiktok.com,PROXY
-DOMAIN-SUFFIX,tiktokv.com,PROXY
-DOMAIN-SUFFIX,musical.ly,PROXY  # 历史遗留域名
-DOMAIN-SUFFIX,ttlive.com,PROXY  # TikTok直播
-# 字节全球基础设施
-DOMAIN-SUFFIX,byteoversea.com,PROXY
-DOMAIN-SUFFIX,ibytedtos.com,PROXY  # 海外CDN证书验证
+# ================= 海外服务强制代理 =================
+# TikTok核心域名组
+DOMAIN-SUFFIX,tiktok.com
+DOMAIN-SUFFIX,tiktokv.com
+DOMAIN-SUFFIX,ttlive.com
+# 字节全球证书校验
+DOMAIN-SUFFIX,ibytedtos.com
+DOMAIN-SUFFIX,byteoversea.com
 
-# ====== 共用服务代理（需严格隔离） ======
-DOMAIN-SUFFIX,snssdk.com,PROXY
-DOMAIN-SUFFIX,bytedapm.com,PROXY  # 性能监控
-DOMAIN-SUFFIX,pstatp.com,PROXY    # 数据分析
-DOMAIN-SUFFIX,bytedance.com,PROXY,force-remote-dns  # 强制远程解析
-DOMAIN-SUFFIX,byted.org,PROXY
+# ================= 混合服务智能分流 =================
+# 用户账户系统（动态分流）
+DOMAIN,account.bytedance.com
+DOMAIN,passport.douyin.com
+# 地理位置服务
+DOMAIN-SUFFIX,amap.com
+DOMAIN-SUFFIX,geoip-db.com
 
-# ====== 抗DNS污染强化 ======
-# AWS北美核心节点（覆盖弗吉尼亚/俄亥俄）
-IP-CIDR,13.224.0.0/14,PROXY,no-resolve
-IP-CIDR,52.84.0.0/15,PROXY,no-resolve
-# Facebook基础设施
-IP-CIDR,31.13.24.0/21,PROXY,no-resolve  
-# Google Cloud服务（TikTok登录备用）
-IP-CIDR,34.120.0.0/16,PROXY,no-resolve
+# ================= 抗DNS污染升级 =================
+# AWS北美核心节点
+IP-CIDR,13.224.0.0/14,no-resolve
+# Facebook骨干网
+IP-CIDR,31.13.24.0/21,no-resolve
+# Google Cloud服务
+IP-CIDR,34.126.0.0/16,no-resolve
 
-# ====== 移动端强化规则 ======
-# 抖音安卓进程名匹配
-PROCESS-NAME,com.ss.android.ugc.aweme,PROXY
-# TikTok进程强制代理
-PROCESS-NAME,com.zhiliaoapp.musically,PROXY
+# ================= 移动端进程级分流 =================
+# 安卓包名检测
+PROCESS-NAME,com.ss.android.ugc.aweme
+PROCESS-NAME,com.zhiliaoapp.musically
+# iOS进程特征
+USER-AGENT,Douyin*
+USER-AGENT,TikTok*
 
-# ====== 终极兜底规则 ======
-GEOIP,CN,PROXY  # 中国大陆IP直连
-FINAL,PROXY       # 其余流量代理
+# ================= 终极流量管控 =================
+GEOIP,CN,PROXY
+FINAL,PROXY
