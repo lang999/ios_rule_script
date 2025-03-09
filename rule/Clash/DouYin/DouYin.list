@@ -1,23 +1,52 @@
-# ==== 策略标记说明 ====
-# PROXY: 代理通道
-# DIRECT: 直连
-# no-resolve: 仅处理IP规则，不解析域名
+[Rule]
+# ====== 国内服务强化直连 ======
+# 核心服务
+DOMAIN-SUFFIX,douyin.com,PROXY
+DOMAIN-SUFFIX,iesdouyin.com,PROXY
+DOMAIN-SUFFIX,douyincdn.com,PROXY
+DOMAIN-SUFFIX,amemv.com,PROXY
+# 静态资源
+DOMAIN-SUFFIX,douyinpic.com,PROXY
+DOMAIN-SUFFIX,douyinstatic.com,PROXY
+# 新增安全校验域名（2023年新增）
+DOMAIN-SUFFIX,security.douyin.com,PROXY
+DOMAIN-SUFFIX,verify.douyin.com,PROXY
+# 支付与日志
+DOMAIN-SUFFIX,payment.douyin.com,PROXY
+DOMAIN-SUFFIX,log.douyin.com,PROXY
 
-# ==== 国内服务直连 ====
-DOMAIN-SUFFIX,douyin.com
-DOMAIN-SUFFIX,iesdouyin.com
-DOMAIN-SUFFIX,douyincdn.com
-DOMAIN-SUFFIX,amemv.com
-DOMAIN-SUFFIX,douyinpic.com
-DOMAIN-SUFFIX,douyinstatic.com
+# ====== 海外服务强制代理 ======
+# TikTok核心域名
+DOMAIN-SUFFIX,tiktok.com,PROXY
+DOMAIN-SUFFIX,tiktokv.com,PROXY
+DOMAIN-SUFFIX,musical.ly,PROXY  # 历史遗留域名
+DOMAIN-SUFFIX,ttlive.com,PROXY  # TikTok直播
+# 字节全球基础设施
+DOMAIN-SUFFIX,byteoversea.com,PROXY
+DOMAIN-SUFFIX,ibytedtos.com,PROXY  # 海外CDN证书验证
 
-# ==== 共用服务代理 ====
-DOMAIN-SUFFIX,snssdk.com
-DOMAIN-SUFFIX,bytedapm.com
-DOMAIN-SUFFIX,pstatp.com
-DOMAIN-SUFFIX,bytedance.com  # 核心账号服务
-DOMAIN-SUFFIX,byted.org     # 开发接口
+# ====== 共用服务代理（需严格隔离） ======
+DOMAIN-SUFFIX,snssdk.com,PROXY
+DOMAIN-SUFFIX,bytedapm.com,PROXY  # 性能监控
+DOMAIN-SUFFIX,pstatp.com,PROXY    # 数据分析
+DOMAIN-SUFFIX,bytedance.com,PROXY,force-remote-dns  # 强制远程解析
+DOMAIN-SUFFIX,byted.org,PROXY
 
-# ==== 抗DNS污染 ====
-IP-CIDR,13.224.0.0/14,PROXY,no-resolve  # TikTok AWS北美节点
-IP-CIDR,31.13.24.0/21,PROXY,no-resolve  # Facebook API
+# ====== 抗DNS污染强化 ======
+# AWS北美核心节点（覆盖弗吉尼亚/俄亥俄）
+IP-CIDR,13.224.0.0/14,PROXY,no-resolve
+IP-CIDR,52.84.0.0/15,PROXY,no-resolve
+# Facebook基础设施
+IP-CIDR,31.13.24.0/21,PROXY,no-resolve  
+# Google Cloud服务（TikTok登录备用）
+IP-CIDR,34.120.0.0/16,PROXY,no-resolve
+
+# ====== 移动端强化规则 ======
+# 抖音安卓进程名匹配
+PROCESS-NAME,com.ss.android.ugc.aweme,PROXY
+# TikTok进程强制代理
+PROCESS-NAME,com.zhiliaoapp.musically,PROXY
+
+# ====== 终极兜底规则 ======
+GEOIP,CN,PROXY  # 中国大陆IP直连
+FINAL,PROXY       # 其余流量代理
