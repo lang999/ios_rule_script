@@ -16,7 +16,6 @@ DOMAIN-SUFFIX,tiktok.com
 DOMAIN-SUFFIX,tiktokv.com
 DOMAIN-SUFFIX,musical.lyY
 DOMAIN-SUFFIX,byteoversea.com
-DOMAIN-SUFFIX,ttlivecdn.com  # 补充直播推流
 
 # ==== 共用服务代理 ====
 DOMAIN-SUFFIX,snssdk.com
